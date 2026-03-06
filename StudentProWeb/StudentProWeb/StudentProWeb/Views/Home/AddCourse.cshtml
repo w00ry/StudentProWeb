@@ -1,0 +1,346 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Pro - Ders ve Not Kaydı</title>
+    <style>
+        /* Mavi-Beyaz Kurumsal OBS Teması */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+            border-top: 5px solid #0056b3;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+            input:focus, select:focus {
+                border-color: #0056b3;
+                outline: none;
+            }
+
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #e9ecef;
+            color: #333;
+            text-align: center;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid #ccc;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+            .btn-submit:hover {
+                background-color: #004494;
+            }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+                color: #3498db;
+            }
+        /* MOBİL UYUM (RESPONSIVE) SİHRİ */
+        @@media (max-width: 768px) {
+            body
+
+        {
+            flex-direction: column; /* Sol menüyü ve içeriği alt alta al */
+        }
+
+        aside {
+            width: 100%; /* Menü tüm ekranı kaplasın */
+            padding: 10px 0;
+        }
+
+            aside h1 {
+                margin-bottom: 15px;
+            }
+
+            aside nav ul {
+                display: flex;
+                flex-wrap: wrap; /* Menü linklerini yatay diz, sığmazsa alta at */
+                justify-content: center;
+                gap: 5px;
+                padding: 0 10px;
+            }
+
+                aside nav ul li {
+                    flex: 1 1 auto;
+                    text-align: center;
+                }
+
+                    aside nav ul li a {
+                        padding: 8px 12px;
+                        font-size: 0.85rem;
+                        border-radius: 4px;
+                        border-left: none !important; /* Mobilde sol çizgi kötü durur */
+                        border-bottom: 3px solid transparent;
+                    }
+
+                        aside nav ul li a:hover, aside nav ul li a.active {
+                            background-color: var(--secondary-color);
+                            border-bottom: 3px solid var(--accent-color);
+                        }
+
+        main {
+            padding: 15px; /* Mobilde kenar boşluklarını daralt */
+        }
+
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .header-flex {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .btn-add {
+            width: 100%; /* Butonlar mobilde tam genişlik olsun */
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .form-row {
+            flex-direction: column; /* Yan yana form kutularını alt alta al */
+            gap: 15px;
+        }
+
+        .card {
+            padding: 15px;
+            overflow-x: auto; /* Tablolar taşarsa sağa kaydırma çubuğu çıkar */
+        }
+
+        table {
+            min-width: 500px; /* Tablo çok ezilmesin, kaydırılabilsin */
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="/Home/Assignments" class="back-link">← Anasayfaya Dön</a>
+        <h2>Yeni Ders Kaydı ve Not Girişi</h2>
+
+        <form action="/Home/SaveCourse" method="post">
+
+            <h3>1. Ders Bilgileri</h3>
+            <div class="form-row">
+                <div class="form-group" style="flex: 2;">
+                    <label>Ders Adı</label>
+                    <input type="text" name="CourseName" required placeholder="Örn: Görsel Programlama">
+                </div>
+                <div class="form-group">
+                    <label>Ders Günü</label>
+                    <select name="CourseDay" required>
+                        <option value="">Seçiniz...</option>
+                        <option value="Pazartesi">Pazartesi</option>
+                        <option value="Salı">Salı</option>
+                        <option value="Çarşamba">Çarşamba</option>
+                        <option value="Perşembe">Perşembe</option>
+                        <option value="Cuma">Cuma</option>
+                    </select>
+                </div>
+            </div>
+
+            <h3>2. Sınav Ağırlığı ve Notlar</h3>
+            <div class="form-row">
+                <div class="form-group" style="flex: 100%;">
+                    <label>Sınav Etki Oranı</label>
+                    <select id="weightSelect" name="ExamWeight" onchange="calculateAverage()">
+                        <option value="40-60">Vize %40 - Final %60 (Klasik)</option>
+                        <option value="50-50">Vize %50 - Final %50</option>
+                        <option value="30-70">Vize %30 - Final %70</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Vize 1</label>
+                    <input type="number" id="vize1" name="Midterm1Score" min="0" max="100" placeholder="Girilmeyebilir" oninput="calculateAverage()">
+                </div>
+                <div class="form-group">
+                    <label>Vize 2</label>
+                    <input type="number" id="vize2" name="Midterm2Score" min="0" max="100" placeholder="Opsiyonel" oninput="calculateAverage()">
+                </div>
+                <div class="form-group">
+                    <label>Final</label>
+                    <input type="number" id="final" name="FinalScore" min="0" max="100" placeholder="Girilmeyebilir" oninput="calculateAverage()">
+                </div>
+            </div>
+
+            <div class="result-box" id="resultBox">
+                <strong>Canlı Ortalama: <span id="averageText">-</span></strong> <br /> Durum: <span id="statusText">Notlar henüz girilmedi</span>
+            </div>
+
+            <h3>3. Devamsızlık Bilgileri</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Devamsızlık Sınırı</label>
+                    <input type="number" name="AbsenceLimit" min="1" required placeholder="Örn: 4">
+                </div>
+                <div class="form-group">
+                    <label>Mevcut Devamsızlık</label>
+                    <input type="number" name="CurrentAbsence" min="0" value="0" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Dersi ve Notları Kaydet</button>
+        </form>
+    </div>
+
+    <script>
+        // Efsanevi Canlı Hesaplama ve Tahmin Sihri
+        function calculateAverage() {
+            let v1Input = document.getElementById('vize1').value;
+            let v2Input = document.getElementById('vize2').value;
+            let fInput = document.getElementById('final').value;
+            let weightSelect = document.getElementById('weightSelect').value;
+
+            let resultBox = document.getElementById('resultBox');
+            let avgText = document.getElementById('averageText');
+            let statusText = document.getElementById('statusText');
+
+            // Oranları yüzdelik dilime çeviriyoruz (Örn: "40-60" -> 0.4 ve 0.6)
+            let weights = weightSelect.split('-');
+            let wVize = parseFloat(weights[0]) / 100;
+            let wFinal = parseFloat(weights[1]) / 100;
+
+            if (v1Input === "") {
+                avgText.innerText = "-";
+                statusText.innerText = "Ders eklenebilir. Sınavlar oldukça notları girebilirsiniz.";
+                resultBox.style.backgroundColor = "#e9ecef";
+                resultBox.style.color = "#333";
+                resultBox.style.borderColor = "#ccc";
+                return;
+            }
+
+            let v1 = parseFloat(v1Input);
+            let vizeOrtalamasi = v1;
+
+            if (v2Input !== "") {
+                vizeOrtalamasi = (v1 + parseFloat(v2Input)) / 2;
+            }
+
+            // MUCİZE KISIM: Vize girilmiş ama Final boşsa, "Kaç almalıyım?" hesaplaması
+            if (fInput === "") {
+                avgText.innerText = "?";
+
+                // Formül: (Hedef Ortalama 50 - (Vize * Vize Oranı)) / Final Oranı
+                let requiredFinal = (50 - (vizeOrtalamasi * wVize)) / wFinal;
+                requiredFinal = Math.ceil(requiredFinal); // Küsüratları yukarı yuvarla
+
+                // Okul kuralı: Ortalama tutsa bile finalden en az 50 alınmalı
+                if (requiredFinal < 50) requiredFinal = 50;
+
+                if (requiredFinal > 100) {
+                    statusText.innerText = "GEÇMEK İMKANSIZ! (Hedef: " + requiredFinal + ")";
+                    resultBox.style.backgroundColor = "#f8d7da";
+                    resultBox.style.color = "#721c24";
+                } else {
+                    statusText.innerText = "Geçmek için Finalden en az " + requiredFinal + " almalısın!";
+                    resultBox.style.backgroundColor = "#fff3cd"; // Sarı Uyarı
+                    resultBox.style.color = "#856404";
+                }
+                return;
+            }
+
+            // Hem Vize hem Final girildiyse gerçek ortalamayı hesapla
+            let f = parseFloat(fInput);
+            let ortalama = (vizeOrtalamasi * wVize) + (f * wFinal);
+            avgText.innerText = ortalama.toFixed(2);
+
+            if (ortalama >= 50 && f >= 50) {
+                statusText.innerText = "BAŞARILI";
+                resultBox.style.backgroundColor = "#d4edda";
+                resultBox.style.color = "#155724";
+            } else {
+                statusText.innerText = "BAŞARISIZ";
+                resultBox.style.backgroundColor = "#f8d7da";
+                resultBox.style.color = "#721c24";
+            }
+        }
+    </script>
+</body>
+</html>

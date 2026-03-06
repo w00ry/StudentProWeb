@@ -1,0 +1,383 @@
+﻿@model IEnumerable<StudentProWeb.Models.Assignment>
+@using Microsoft.AspNetCore.Http
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Pro - Ödevlerim</title>
+    <style>
+        /* Ana Tema ve Ödevlere Özel Renkler */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #d29b6c; /* Ödevlere özel toprak/turuncu tonu */
+            --bg-color: #f4f6f9;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sol Menü */
+        aside {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+        }
+
+            aside h1 {
+                text-align: center;
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+                color: var(--accent-color);
+            }
+
+            aside nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                aside nav ul li a {
+                    display: block;
+                    padding: 15px 20px;
+                    color: white;
+                    text-decoration: none;
+                    transition: background 0.3s;
+                }
+
+                    aside nav ul li a:hover, aside nav ul li a.active {
+                        background-color: var(--secondary-color);
+                        border-left: 4px solid var(--accent-color);
+                    }
+
+        /* Ana İçerik ve Başlık */
+        main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        /* Modern Kart Tasarımı */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+            .header-flex h2 {
+                border: none;
+                padding: 0;
+                margin-bottom: 0;
+                color: var(--primary-color);
+                font-size: 1.4rem;
+            }
+
+        /* Tablo Tasarımı */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 15px 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:hover {
+            background-color: #fcfcfc;
+        }
+
+        /* Butonlar */
+        .btn-add {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+            .btn-add:hover {
+                background-color: #b8855a;
+                transform: translateY(-2px);
+            }
+
+        /* Ödev Durum Rozetleri */
+        .status-badge {
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .status-pending {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .status-completed {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* YENİ: İşlem Butonları Düzeni */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-action {
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-complete {
+            background-color: #2ecc71;
+        }
+
+            .btn-complete:hover {
+                background-color: #27ae60;
+            }
+
+        .btn-reactivate {
+            background-color: #f39c12;
+        }
+
+            .btn-reactivate:hover {
+                background-color: #e67e22;
+            }
+
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+            .btn-delete:hover {
+                background-color: #c0392b;
+            }
+
+        /* MOBİL UYUM (RESPONSIVE) SİHRİ */
+        @@media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+                aside h1 {
+                    margin-bottom: 15px;
+                }
+
+                aside nav ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 5px;
+                    padding: 0 10px;
+                }
+
+                    aside nav ul li {
+                        flex: 1 1 auto;
+                        text-align: center;
+                    }
+
+                        aside nav ul li a {
+                            padding: 8px 12px;
+                            font-size: 0.85rem;
+                            border-radius: 4px;
+                            border-left: none !important;
+                            border-bottom: 3px solid transparent;
+                        }
+
+                            aside nav ul li a:hover, aside nav ul li a.active {
+                                background-color: var(--secondary-color);
+                                border-bottom: 3px solid var(--accent-color);
+                            }
+
+            main {
+                padding: 15px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .btn-add {
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            .card {
+                padding: 15px;
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 600px;
+            }
+            /* Tablo silme butonu eklenince çok sıkışmasın diye */
+        }
+    </style>
+</head>
+<body>
+
+    <aside>
+        <h1>Student Pro</h1>
+        <nav>
+            <ul>
+                <li><a href="/Home/Index">Ana Panel</a></li>
+                <li><a href="/Home/Course">Derslerim ve Notlarım</a></li>
+                <li><a href="/Home/Assignments" class="active">Ödevlerim</a></li>
+                <li><a href="/Home/Exams">Sınav Takvimi</a></li>
+                <li><a href="/Account/Login">Çıkış Yap</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <h2 style="margin: 0;">Ödevlerim</h2>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d;">Bekleyen ve Tamamlanan Görevler</p>
+            </div>
+            <div class="user-info">
+                <strong>Hoş geldin, @Context.Session.GetString("LoggedStudentName")</strong>
+            </div>
+        </header>
+
+        <section class="card">
+            <div class="header-flex">
+                <h2>Görev Listesi</h2>
+                <a href="/Home/AddAssignment" class="btn-add">+ Yeni Ödev Ekle</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ders</th>
+                        <th>Ödev Başlığı</th>
+                        <th>Son Teslim Tarihi</th>
+                        <th>Durum</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Course.CourseName</td>
+                                <td><strong>@item.AssignmentTitle</strong></td>
+                                <td>@item.DueDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                <td>
+                                    @if (item.IsCompleted)
+                                    {
+                                        <span class="status-badge status-completed">Tamamlandı</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="status-badge status-pending">Bekliyor</span>
+                                    }
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        @if (!item.IsCompleted)
+                                        {
+                                            <a href="/Home/CompleteAssignment/@item.AssignmentId" class="btn-action btn-complete">Bitir</a>
+                                        }
+                                        else
+                                        {
+                                            <a href="/Home/ReactivateAssignment/@item.AssignmentId" class="btn-action btn-reactivate">Aktifleştir</a>
+                                        }
+
+                                        <a href="/Home/DeleteItem?entityType=Assignment&id=@item.AssignmentId" class="btn-delete" onclick="return confirm('Bu ödevi tamamen silmek istediğinize emin misiniz?');">Sil</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="5" style="text-align: center; padding: 20px; color: #7f8c8d;">Harika! Şu an bekleyen hiçbir ödevin yok.</td></tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

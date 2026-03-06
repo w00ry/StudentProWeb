@@ -1,0 +1,215 @@
+﻿@model StudentProWeb.Models.Student
+@{
+    ViewData["Title"] = "Derslerim ve Notlarım";
+    Layout = null;
+
+    int totalAbsence = Model?.Grades != null ? Model.Grades.Sum(g => g.CurrentAbsence) : 0;
+    int absenceLimit = 20;
+    int absencePercentage = absenceLimit > 0 ? (totalAbsence * 100) / absenceLimit : 0;
+    if (absencePercentage > 100) absencePercentage = 100;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Pro - @ViewData["Title"]</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f4f6f9;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        aside {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+        }
+
+            aside h1 {
+                text-align: center;
+                color: var(--accent-color);
+            }
+
+            aside nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                aside nav ul li a {
+                    display: block;
+                    padding: 15px 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+
+                    aside nav ul li a.active {
+                        background-color: #34495e;
+                        border-left: 4px solid var(--accent-color);
+                    }
+
+        main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f8f9fa;
+        }
+
+        .badge-average {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+            background-color: #27ae60;
+        }
+
+        .badge-fail {
+            background-color: #c0392b;
+        }
+
+        .btn-add {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn-edit {
+            background-color: #f39c12;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <h1>Student Pro</h1>
+        <nav>
+            <ul>
+                <li><a href="/Home/Index">Ana Panel</a></li>
+                <li><a href="/Home/Course" class="active">Derslerim</a></li>
+                <li><a href="/Account/Login">Çıkış Yap</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+            <h2>Derslerim ve Notlarım</h2>
+            <strong>Hoş geldin, @(Model?.FirstName) @(Model?.LastName)</strong>
+        </header>
+
+        <section class="card">
+            <div style="display:flex; justify-content:space-between; margin-bottom:15px;">
+                <h3>Güncel Notlar</h3>
+                <a href="/Home/AddCourse" class="btn-add">+ Yeni Ders</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ders Adı</th>
+                        <th>Vize 1</th>
+                        <th>Vize 2</th>
+                        <th>Final</th>
+                        <th>Ortalama</th>
+                        <th>Devamsızlık</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model?.Grades != null && Model.Grades.Any())
+                    {
+                        foreach (var grade in Model.Grades)
+                        {
+                            // 1. Controller'dan gelen hazır, pürüzsüz veriyi sözlükten (Dictionary) çekiyoruz
+                            var averages = ViewBag.Averages as System.Collections.Generic.Dictionary<int, string>;
+                            string currentAvg = averages != null && averages.ContainsKey(grade.GradeId) ? averages[grade.GradeId] : "Final Bekleniyor";
+
+                            // 2. Rengin kırmızı mı yeşil mi olacağını belirliyoruz (50'den küçükse kaldı)
+                            bool isNumber = double.TryParse(currentAvg, out double val);
+                            bool isFail = isNumber && val < 50;
+
+                            <tr>
+                                <td>@grade.Course?.CourseName</td>
+                                <td>@(grade.Midterm1Score?.ToString() ?? "-")</td>
+                                <td>@(grade.Midterm2Score?.ToString() ?? "-")</td>
+                                <td>@(grade.FinalScore?.ToString() ?? "-")</td>
+
+                                <td>
+                                    @if (currentAvg != "Final Bekleniyor")
+                                    {
+                                        <span class="badge-average @(isFail ? "badge-fail" : "")">
+                                            @currentAvg
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        <i style="color:gray; font-size:0.8rem;">Final Bekleniyor</i>
+                                    }
+                                </td>
+
+                                <td style="color:@(grade.CurrentAbsence >= grade.AbsenceLimit ? "red" : "black")">
+                                    @grade.CurrentAbsence / @grade.AbsenceLimit
+                                </td>
+                                <td>
+                                    <a href="/Home/EditCourse/@grade.GradeId" class="btn-edit">Düzenle</a>
+                                    <a href="/Home/DeleteItem?entityType=Course&id=@grade.GradeId" class="btn-delete" onclick="return confirm('Silinsin mi?');">Sil</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="7">Henüz not kaydınız bulunmamaktadır.</td></tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,246 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Pro - Yeni Sınav Ekle</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 600px;
+            border-top: 5px solid #9b59b6; /* Sınavlara özel mor tema */
+        }
+
+        h2 {
+            color: #8e44ad;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        input, select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+            input:focus, select:focus {
+                border-color: #9b59b6;
+                outline: none;
+            }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background-color: #9b59b6;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+            .btn-submit:hover {
+                background-color: #8e44ad;
+            }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 15px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+            .back-link:hover {
+                color: #9b59b6;
+            }
+        /* MOBİL UYUM (RESPONSIVE) SİHRİ */
+        @@media (max-width: 768px) {
+            body
+
+        {
+            flex-direction: column; /* Sol menüyü ve içeriği alt alta al */
+        }
+
+        aside {
+            width: 100%; /* Menü tüm ekranı kaplasın */
+            padding: 10px 0;
+        }
+
+            aside h1 {
+                margin-bottom: 15px;
+            }
+
+            aside nav ul {
+                display: flex;
+                flex-wrap: wrap; /* Menü linklerini yatay diz, sığmazsa alta at */
+                justify-content: center;
+                gap: 5px;
+                padding: 0 10px;
+            }
+
+                aside nav ul li {
+                    flex: 1 1 auto;
+                    text-align: center;
+                }
+
+                    aside nav ul li a {
+                        padding: 8px 12px;
+                        font-size: 0.85rem;
+                        border-radius: 4px;
+                        border-left: none !important; /* Mobilde sol çizgi kötü durur */
+                        border-bottom: 3px solid transparent;
+                    }
+
+                        aside nav ul li a:hover, aside nav ul li a.active {
+                            background-color: var(--secondary-color);
+                            border-bottom: 3px solid var(--accent-color);
+                        }
+
+        main {
+            padding: 15px; /* Mobilde kenar boşluklarını daralt */
+        }
+
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .header-flex {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .btn-add {
+            width: 100%; /* Butonlar mobilde tam genişlik olsun */
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .form-row {
+            flex-direction: column; /* Yan yana form kutularını alt alta al */
+            gap: 15px;
+        }
+
+        .card {
+            padding: 15px;
+            overflow-x: auto; /* Tablolar taşarsa sağa kaydırma çubuğu çıkar */
+        }
+
+        table {
+            min-width: 500px; /* Tablo çok ezilmesin, kaydırılabilsin */
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="/Home/Exams" class="back-link">← Sınav Takvimine Dön</a>
+        <h2>Yeni Sınav Ekle</h2>
+
+        <form action="/Home/SaveExam" method="post">
+
+            <h3>1. Ders Seçimi</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Hangi Dersin Sınavı?</label>
+                    <select name="CourseId" required>
+                        <option value="">Lütfen Kendi Derslerinizden Birini Seçin...</option>
+
+                        @if (ViewBag.Courses != null)
+                        {
+                            foreach (var course in ViewBag.Courses)
+                            {
+                                <option value="@course.CourseId">@course.CourseName</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <h3>2. Sınav Detayları</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Sınav Türü</label>
+                    <select name="ExamType" required>
+                        <option value="">Seçiniz...</option>
+                        <option value="Vize 1">Vize 1</option>
+                        <option value="Vize 2">Vize 2</option>
+                        <option value="Final">Final</option>
+                        <option value="Bütünleme">Bütünleme</option>
+                        <option value="Quiz / Kısa Sınav">Quiz / Kısa Sınav</option>
+                        <option value="Proje Teslimi">Proje Teslimi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Sınav Tarihi ve Saati</label>
+                    <input type="datetime-local" name="ExamDate" required>
+                </div>
+                <div class="form-group">
+                    <label>Derslik / Amfi (Opsiyonel)</label>
+                    <input type="text" name="Classroom" placeholder="Örn: Amfi 1, Lab 3">
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">Sınavı Takvime Ekle</button>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+﻿@model IEnumerable<StudentProWeb.Models.Exam>
+@using Microsoft.AspNetCore.Http
+@{
+    Layout = null;
+    var now = DateTime.Now; // Kalan günü hesaplamak için şu anki zamanı alıyoruz
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Pro - Sınav Takvimi</title>
+    <style>
+        /* Sınav Takvimi için özel Mor (Purple) Tema */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #9b59b6; /* Sınavlara özel mor vurgu */
+            --bg-color: #f4f6f9;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        aside {
+            width: 250px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+        }
+
+            aside h1 {
+                text-align: center;
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+                color: var(--accent-color);
+            }
+
+            aside nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                aside nav ul li a {
+                    display: block;
+                    padding: 15px 20px;
+                    color: white;
+                    text-decoration: none;
+                    transition: background 0.3s;
+                }
+
+                    /* Aktif menü elemanı için CSS */
+                    aside nav ul li a:hover, aside nav ul li a.active {
+                        background-color: var(--secondary-color);
+                        border-left: 4px solid var(--accent-color);
+                    }
+
+        main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        /* Modern Kart Tasarımı */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 15px 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        tr:hover {
+            background-color: #fcfcfc;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+            .header-flex h2 {
+                border: none;
+                padding: 0;
+                margin-bottom: 0;
+                color: var(--primary-color);
+                font-size: 1.4rem;
+            }
+
+        .btn-add {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+            .btn-add:hover {
+                background-color: #8e44ad;
+                transform: translateY(-2px);
+            }
+
+        /* Akıllı Durum Rozetleri */
+        .badge {
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .badge-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .badge-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .badge-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        /* YENİ: İŞLEM BUTONLARI İÇİN TASARIM */
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-edit {
+            background-color: #f39c12;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+            .btn-edit:hover {
+                background-color: #e67e22;
+            }
+
+        .btn-delete {
+            background-color: #e74c3c;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+            .btn-delete:hover {
+                background-color: #c0392b;
+            }
+
+        /* MOBİL UYUM (RESPONSIVE) SİHRİ */
+        @@media (max-width: 768px) {
+            body {
+                flex-direction: column; /* Sol menüyü ve içeriği alt alta al */
+            }
+
+            aside {
+                width: 100%; /* Menü tüm ekranı kaplasın */
+                padding: 10px 0;
+            }
+
+                aside h1 {
+                    margin-bottom: 15px;
+                }
+
+                aside nav ul {
+                    display: flex;
+                    flex-wrap: wrap; /* Menü linklerini yatay diz, sığmazsa alta at */
+                    justify-content: center;
+                    gap: 5px;
+                    padding: 0 10px;
+                }
+
+                    aside nav ul li {
+                        flex: 1 1 auto;
+                        text-align: center;
+                    }
+
+                        aside nav ul li a {
+                            padding: 8px 12px;
+                            font-size: 0.85rem;
+                            border-radius: 4px;
+                            border-left: none !important; /* Mobilde sol çizgi kötü durur */
+                            border-bottom: 3px solid transparent;
+                        }
+
+                            aside nav ul li a:hover, aside nav ul li a.active {
+                                background-color: var(--secondary-color);
+                                border-bottom: 3px solid var(--accent-color);
+                            }
+
+            main {
+                padding: 15px; /* Mobilde kenar boşluklarını daralt */
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .btn-add {
+                width: 100%; /* Butonlar mobilde tam genişlik olsun */
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            .form-row {
+                flex-direction: column; /* Yan yana form kutularını alt alta al */
+                gap: 15px;
+            }
+
+            .card {
+                padding: 15px;
+                overflow-x: auto; /* Tablolar taşarsa sağa kaydırma çubuğu çıkar */
+            }
+
+            table {
+                min-width: 600px; /* Tablo çok ezilmesin, kaydırılabilsin */
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <aside>
+        <h1>Student Pro</h1>
+        <nav>
+            <ul>
+                <li><a href="/Home/Index">Ana Panel</a></li>
+                <li><a href="/Home/Course">Derslerim ve Notlarım</a></li>
+                <li><a href="/Home/Assignments">Ödevlerim</a></li>
+                <li><a href="/Home/Exams" class="active">Sınav Takvimi</a></li>
+                <li><a href="/Account/Login">Çıkış Yap</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <header>
+            <div>
+                <h2 style="margin: 0;">Sınav Takvimi</h2>
+                <p style="margin: 5px 0 0 0; color: #7f8c8d;">Yaklaşan Sınavlar ve Derslik Bilgileri</p>
+            </div>
+            <div class="user-info">
+                <strong>Hoş geldin, @Context.Session.GetString("LoggedStudentName")</strong>
+            </div>
+        </header>
+
+        <section class="card">
+            <div class="header-flex">
+                <h2>Planlanmış Sınavlar</h2>
+                <a href="/Home/AddExam" class="btn-add">+ Yeni Sınav Ekle</a>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ders</th>
+                        <th>Sınav Türü</th>
+                        <th>Tarih ve Saat</th>
+                        <th>Derslik</th>
+                        <th>Kalan Süre</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            var daysLeft = (item.ExamDate - now).TotalDays;
+                            string badgeClass = "";
+                            string statusText = "";
+
+                            if (daysLeft < 0)
+                            {
+                                badgeClass = "badge-danger";
+                                statusText = "Sınav Geçti";
+                            }
+                            else if (daysLeft <= 7)
+                            {
+                                badgeClass = "badge-warning";
+                                statusText = Math.Ceiling(daysLeft) + " Gün Kaldı";
+                            }
+                            else
+                            {
+                                badgeClass = "badge-success";
+                                statusText = Math.Ceiling(daysLeft) + " Gün Var";
+                            }
+
+                            <tr>
+                                <td>@item.Course.CourseName</td>
+                                <td><strong>@item.ExamType</strong></td>
+                                <td>@item.ExamDate.ToString("dd.MM.yyyy HH:mm")</td>
+                                <td>@(string.IsNullOrEmpty(item.Classroom) ? "-" : item.Classroom)</td>
+                                <td>
+                                    <span class="badge @badgeClass">@statusText</span>
+                                </td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <a href="/Home/EditExam/@item.ExamId" class="btn-edit">Düzenle</a>
+                                        <a href="/Home/DeleteItem?entityType=Exam&id=@item.ExamId" class="btn-delete" onclick="return confirm('Bu sınavı silmek istediğinize emin misiniz?');">Sil</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr><td colspan="6" style="text-align: center; padding: 20px; color: #7f8c8d;">Takviminde henüz yaklaşan bir sınav görünmüyor. Rahat bir nefes alabilirsin!</td></tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</body>
+</html>

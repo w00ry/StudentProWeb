@@ -1,0 +1,227 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Pro - Sistem Girişi</title>
+    <style>
+        /* Mavi-Beyaz OBS Teması */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .auth-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            border-top: 5px solid #0056b3;
+        }
+
+        h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+            input:focus {
+                border-color: #0056b3;
+                outline: none;
+            }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            top: 30px;
+            cursor: pointer;
+            color: #666;
+            user-select: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+            .btn:hover {
+                background-color: #004494;
+            }
+
+        .alert {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #0056b3;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="auth-box">
+      
+
+        @if (ViewBag.LoginError != null)
+        {
+            <div class="alert alert-danger">@ViewBag.LoginError</div>
+        }
+        @if (ViewBag.RegisterError != null)
+        {
+            <div class="alert alert-danger">@ViewBag.RegisterError</div>
+        }
+        @if (ViewBag.SuccessMessage != null)
+        {
+            <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+        }
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div style="color:red; margin-bottom:10px;">@ViewBag.ErrorMessage</div>
+        }
+
+        <div id="loginSection" style="display: @(ViewBag.RegisterError != null ? "none" : "block");">
+            <h2>Öğrenci Girişi</h2>
+            <form action="/Account/Login" method="post">
+                <div class="form-group">
+                    <label>E-Posta Adresi</label>
+                    <input type="email" name="email" required placeholder="ornek@edu.tr">
+                </div>
+                <div class="form-group">
+                    <label>Şifre</label>
+                    <input type="password" id="loginPass" name="password" required>
+                    <span class="eye-icon" onclick="togglePass('loginPass')">👁️</span>
+                </div>
+                <button type="submit" class="btn">Giriş Yap</button>
+            </form>
+            <a class="toggle-link" onclick="toggleForms()">Hesabınız yok mu? Kayıt Ol</a>
+        </div>
+
+        <div id="registerSection" style="display: @(ViewBag.RegisterError != null ? "block" : "none");">
+            <h2>Yeni Öğrenci Kaydı</h2>
+            <form action="/Account/Register" method="post" onsubmit="return validateEduEmail()">
+                <div class="form-group">
+                    <label>Adınız</label>
+                    <input type="text" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label>Soyadınız</label>
+                    <input type="text" name="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Okul E-Postası (.edu veya .edu.tr)</label>
+                    <input type="email" id="regEmail" name="email" required placeholder="ad.soyad@edu.tr">
+                </div>
+                <div class="form-group">
+                    <label>Şifre (Maksimum 12 Karakter)</label>
+                    <input type="password" id="regPass" name="password" maxlength="12" required>
+                    <span class="eye-icon" onclick="togglePass('regPass')">👁️</span>
+                </div>
+                <button type="submit" class="btn">Sisteme Kayıt Ol</button>
+            </form>
+            <a class="toggle-link" onclick="toggleForms()">Zaten hesabınız var mı? Giriş Yap</a>
+        </div>
+
+    </div>
+
+    <script>
+        function togglePass(inputId) {
+            var input = document.getElementById(inputId);
+            if (input.type === "password") {
+                input.type = "text";
+            } else {
+                input.type = "password";
+            }
+        }
+
+        function toggleForms() {
+            var login = document.getElementById("loginSection");
+            var register = document.getElementById("registerSection");
+
+            if (login.style.display === "none") {
+                login.style.display = "block";
+                register.style.display = "none";
+            } else {
+                login.style.display = "none";
+                register.style.display = "block";
+            }
+        }
+
+        // YENİ EKLENEN AKILLI GÜVENLİK SİSTEMİ
+        function validateEduEmail() {
+            var email = document.getElementById("regEmail").value;
+
+            // Eğer mail edu veya edu.tr ile BİTMİYORSA
+            if (!email.endsWith(".edu") && !email.endsWith(".edu.tr")) {
+                alert("Hata: Sisteme sadece geçerli bir okul e-postası (.edu veya .edu.tr) ile kayıt olabilirsiniz!");
+                return false; // Formun gönderilmesini (ve 405 hatası almanı) engeller!
+            }
+            return true; // Sorun yoksa form çalışmaya devam eder
+        }
+    </script>
+</body>
+</html>

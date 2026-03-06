@@ -1,0 +1,389 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\editcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\models\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\models\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\models\\studentprodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\models\\studentprodbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\models\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\models\\grade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\models\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\models\\assignment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\addexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\addexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\exams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\exams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\assignments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\assignments.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\addassignment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\addassignment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\addcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\addcourse.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\editexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\editexam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\login.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|c:\\users\\mehme\\onedrive\\masa\u00FCst\u00FC\\studentproweb\\studentproweb\\studentproweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2AAF18BF-36FE-450B-A4F2-8FFA8EA813B6}|StudentProWeb\\StudentProWeb.csproj|solutionrelative:studentproweb\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Program.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Program.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Program.cs",
+              "RelativeToolTip": "StudentProWeb\\Program.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAgwDEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T14:10:00.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Assignment.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Assignment.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Models\\Assignment.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Assignment.cs",
+              "RelativeToolTip": "StudentProWeb\\Models\\Assignment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T21:04:23.688Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Exam.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Exam.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Models\\Exam.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Exam.cs",
+              "RelativeToolTip": "StudentProWeb\\Models\\Exam.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T10:26:48.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Grade.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Grade.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Models\\Grade.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Grade.cs",
+              "RelativeToolTip": "StudentProWeb\\Models\\Grade.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T14:30:28.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Models\\Student.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\Student.cs",
+              "RelativeToolTip": "StudentProWeb\\Models\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T17:51:03.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StudentProDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\StudentProDbContext.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Models\\StudentProDbContext.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Models\\StudentProDbContext.cs",
+              "RelativeToolTip": "StudentProWeb\\Models\\StudentProDbContext.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBsAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T15:01:11.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Course.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Course.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\Course.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Course.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\Course.cshtml",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAcwNAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T12:41:04.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "StudentProWeb\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAF0BAAAAAAAAAAAuwIEBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T10:29:38.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditCourse.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\EditCourse.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\EditCourse.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\EditCourse.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\EditCourse.cshtml",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAjwLAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-02T14:50:27.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\appsettings.json",
+              "RelativeDocumentMoniker": "StudentProWeb\\appsettings.json",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\appsettings.json",
+              "RelativeToolTip": "StudentProWeb\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAIAAACIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-04T20:27:51.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAALYAAAAAAAAAAAAiwOIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-19T15:07:47.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "StudentProWeb\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "StudentProWeb\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAUwEEAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T15:03:42.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAANEAAAAAAAAAAAAgwOkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-19T14:30:13.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddCourse.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\AddCourse.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\AddCourse.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\AddCourse.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\AddCourse.cshtml",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAjwHUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-02T12:20:04.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AddExam.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\AddExam.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\AddExam.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\AddExam.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\AddExam.cshtml",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAjwGoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T10:35:39.037Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Assignments.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Assignments.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\Assignments.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Assignments.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\Assignments.cshtml",
+              "ViewState": "AgIAAB4BAAAAAAAAAAAwwCwBAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T20:13:38.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Exams.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Exams.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\Exams.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Exams.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\Exams.cshtml",
+              "ViewState": "AgIAABQBAAAAAAAAAAAgwCcBAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T10:24:53.983Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddAssignment.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\AddAssignment.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\AddAssignment.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\AddAssignment.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\AddAssignment.cshtml",
+              "ViewState": "AgIAAFYAAAAAAAAAAADwv2wAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T21:28:16.358Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EditExam.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\EditExam.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\EditExam.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\EditExam.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\EditExam.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAjwGsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T10:53:13.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Login.html",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Login.html",
+              "RelativeDocumentMoniker": "StudentProWeb\\Login.html",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Login.html",
+              "RelativeToolTip": "StudentProWeb\\Login.html",
+              "ViewState": "AgIAAE4AAAAAAAAAAAASwGMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2026-02-19T14:56:08.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "StudentProWeb\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "StudentProWeb\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-05T12:47:42.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "StudentProWeb\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "StudentProWeb\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-19T14:56:57.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "StudentProWeb\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\mehme\\OneDrive\\Masa\u00FCst\u00FC\\StudentProWeb\\StudentProWeb\\StudentProWeb\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "StudentProWeb\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-19T14:57:05.308Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
