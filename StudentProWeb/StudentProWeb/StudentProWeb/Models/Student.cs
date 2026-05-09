@@ -5,6 +5,7 @@ namespace StudentProWeb.Models;
 
 public partial class Student
 {
+    //properties
     public int StudentId { get; set; }
 
     public string FirstName { get; set; } = null!;
@@ -20,6 +21,9 @@ public partial class Student
     public string? Email { get; set; }
 
     public string? PasswordHash { get; set; }
+
+
+    //Attandance class new object creation
 
     public virtual ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
 

@@ -25,7 +25,7 @@ namespace StudentProWeb.Controllers
 
             var totalCourses = _context.Grades.Count(g => g.StudentId == loggedInUserId.Value);
             var pendingAssignments = _context.Assignments.Count(a => a.StudentId == loggedInUserId.Value);
-            var upcomingExams = _context.Exams.Count(e => e.StudentId == loggedInUserId.Value && e.ExamDate >= DateTime.Now);
+            var upcomingExams = _context.Exams.Count(e => e.StudentId == loggedInUserId.Value && e.ExamDate >= DateTime.UtcNow);
 
             ViewBag.TotalCourses = totalCourses;
             ViewBag.PendingAssignments = pendingAssignments;
